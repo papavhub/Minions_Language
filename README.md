@@ -29,25 +29,22 @@ Muak-Muak-Muak-Muak -> 4
 ```
 
 ### 3. 선언
-N번째의 변수에 value를 할당합니다.
+변수에 값을 할당합니다.
 ```
-Gelato Muak-Muak-Muak Hemmm -> 3번째 변수에 "Hemmm" 할당
+Gelato bananacorn yummy -> bananacorn = yummy
 ```
 
 ### 4. 입력
-String(string) 또는 Int(int)를 입력받아 N번째의 변수에 value를 할당합니다.
+String(string) 또는 Int(int)를 입력받아 변수에 값을 할당합니다.
 ```
-Tulaliloo ti amo! String Hana hem -> 1번째 변수에 "hem" 할당
-Tulaliloo ti amo! String Hana 23 -> 1번째 변수에 23 할당
+Tulaliloo ti amo! String gelatocorn -> gelatocorn = str(input())
+Tulaliloo ti amo! Int gelatocorn -> gelatocorn = int(input())
 ```
 
 ### 5. 출력
-#### 1) N번째 할당된 변수의 값을 출력합니다.
+할당된 변수가 존재한다면 변수의 값, 존재하지 않는다면 입력된 값을 외칩니다.
 ```
-Kanpai! Hana -> 1번째 할당된 변수의 값 Print
-```
-#### 2) Kanpai! 뒤에 외치는 단어를 하나씩 출력합니다.
-```
+Kanpai! bananacorn gelatocorn hemmnnn -> bananacorn 변수 값, gelatocorn 변수 값, "hemmnnn"  Print
 Kanpai! M I N I O N S
 ->
 M!
@@ -75,3 +72,12 @@ Banana!
 Poopaye!
 ```
 
+## 실행 예시
+```
+git clone 
+python __main__.py example.minions
+```
+
+## version
+### 1.0 : Original
+### 2.0 : 변수 할당을 data[N]으로 할당하는 구조에서, 딕셔너리 형으로 변경함
