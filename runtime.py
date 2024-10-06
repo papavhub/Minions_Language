@@ -86,7 +86,6 @@ class Minions:
                 print("Banana!")
         
         elif TYPE == 'END': # 프로그램 종료
-            print(self.data)
             sys.exit()
 
     def compile(self, code, check=True, errors=100000):
