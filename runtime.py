@@ -3,7 +3,7 @@ import exceptions
 
 class Minions:
     def __init__(self):
-        self.data = ["Banana!"]*256
+        self.data = dict()
 
     def toNumber(self, code):
         if code == "Hana":
@@ -24,34 +24,32 @@ class Minions:
 
     @staticmethod
     def type(code):
-        if 'Banana' in code:
-            return 'REPEAT'
-        if 'Poopaye!' in code:
-            return 'END'
+        if 'Gelato' in code:
+            return 'DEF'
         if 'Tulaliloo ti amo!' in code:
             return 'INPUT'
         if 'Kanpai!' in code:
             return 'PRINT'
-        if 'Gelato' in code:
-            return 'DEF'
+        if 'Banana' in code:
+            return 'REPEAT'
+        if 'Poopaye!' in code:
+            return 'END'
 
     def compileLine(self, code):
         if code == '':
             return None
         TYPE = self.type(code)
         
-        if TYPE == 'DEF': # Gelato! Hana hem" -> data[1] = hem
+        if TYPE == 'DEF': # Gelato Hana hem" -> data[Hana] = hem
             try:
-                gelato, var, value = code.split(" ") # Gelato, var, value"
+                var, value = code.replace("Gelato ", "").split(" ") # Gelato, var, value"
             except:
                 raise exceptions.InputException()
             
-            self.data[self.toNumber(var)] = value
+            self.data[var] = value
             
-        elif TYPE == 'END': # 프로그램 종료
-            sys.exit()
             
-        elif TYPE == 'INPUT': # Tulaliloo ti amo! String Hana hem -> data[1] = hem
+        elif TYPE == 'INPUT': # Tulaliloo ti amo! String Hana hem -> data[Hana] = hem
             try:
                 type, var = code.replace("Tulaliloo ti amo! ", "").split(" ") # tulaliloo, type, var
             except:
@@ -59,30 +57,23 @@ class Minions:
 
             if type == "string" or type == "String": # String
                 print("?")
-                self.data[self.toNumber(var)] = str(input())
+                self.data[var] = str(input())
             elif type == "int" or type == "Int": # Int
                 print("?")
-                self.data[self.toNumber(var)] = int(input())
+                self.data[var] = int(input())
                 
         elif TYPE == 'PRINT':
             try:
-                kanpai = code.split(" ")
+                kanpai = code.replace("Kanpai! ", "").split(" ")
             except:
                 raise exceptions.InputException()
-            
-            # data에 저장한 변수를 출력한다.
-            if len(kanpai) == 2:
-                try:
-                    var = self.toNumber(kanpai[-1])
-                    print(str(self.data[var]) + "!")
-                    return
-                except:
-                    pass
-            
+                      
             for k in kanpai:
-                if k == "Kanpai!":
-                    pass
-                else:
+                # 변수에 저장되어 있다면
+                try:
+                    print(str(self.data[k]) + "!")
+                # 변수에 저장되어 있지 않다면
+                except:
                     print(str(k) + "!")
                     
         elif TYPE == 'REPEAT': # Banana Dul -> Banana Banana
@@ -93,6 +84,10 @@ class Minions:
             
             for _ in range(self.toNumber(number)):
                 print("Banana!")
+        
+        elif TYPE == 'END': # 프로그램 종료
+            print(self.data)
+            sys.exit()
 
     def compile(self, code, check=True, errors=100000):
         
