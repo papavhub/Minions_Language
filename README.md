@@ -79,5 +79,5 @@ python __main__.py example.minions
 ```
 
 ## version
-### 1.0 : Original
-### 2.0 : 변수 할당을 data[N]으로 할당하는 구조에서, 딕셔너리 형으로 변경함
+- 1.0 : Original
+- 2.0 : 변수 할당을 data[N]으로 할당하는 구조에서, 딕셔너리 형으로 변경함
