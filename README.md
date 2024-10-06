@@ -4,7 +4,8 @@ Minions Language는 rycont/umjunsik-lang과 cjaewon/umlang에 영감을 받아, 
 
 
 ## 참고한 언어
-아래의 미니언 용어 사전을 참고하였습니다.
+- 아래의 미니언 용어 사전을 참고하였습니다.
+
 ![image](https://github.com/user-attachments/assets/3173c153-2ab3-4704-a5a5-bc73e6fa99fa)
 
 
