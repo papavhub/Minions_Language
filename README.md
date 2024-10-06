@@ -38,7 +38,7 @@ Gelato bananacorn yummy -> bananacorn = yummy
 String(string) 또는 Int(int)를 입력받아 변수에 값을 할당합니다.
 ```
 Tulaliloo ti amo! String gelatocorn -> gelatocorn = str(input())
-Tulaliloo ti amo! Int gelatocorn -> gelatocorn = int(input())
+Tulaliloo ti amo! Int gelatocorn -> gelatocorn = int(input())
 ```
 
 ### 5. 출력
